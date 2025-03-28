@@ -1,14 +1,17 @@
-import type { OptionsStylistic, TypedFlatConfigItem } from '../types'
+import type { OptionsFiles, OptionsStylistic, TypedFlatConfigItem } from '../types'
+import { GLOB_JS } from '../globs'
 
 import { interopDefault } from '../utils'
 
-export async function jsdoc(options: OptionsStylistic = {}): Promise<TypedFlatConfigItem[]> {
+export async function jsdoc(options: OptionsStylistic & OptionsFiles = {}): Promise<TypedFlatConfigItem[]> {
   const {
+    files = [GLOB_JS],
     stylistic = true,
   } = options
 
   return [
     {
+      files,
       name: 'antfu/jsdoc/rules',
       plugins: {
         jsdoc: await interopDefault(import('eslint-plugin-jsdoc')),
