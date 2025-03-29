@@ -1,19 +1,19 @@
 {
-  "name": "@antfu/eslint-config",
+  "name": "eslint-config-thewlabs",
   "type": "module",
   "version": "4.11.0",
-  "packageManager": "pnpm@10.6.5",
-  "description": "Anthony's ESLint config",
-  "author": "Anthony Fu <anthonyfu117@hotmail.com> (https://github.com/antfu/)",
+  "packageManager": "pnpm@10.7.0+sha512.6b865ad4b62a1d9842b61d674a393903b871d9244954f652b8842c2b553c72176b278f64c463e52d40fff8aba385c235c8c9ecf5cc7de4fd78b8bb6d49633ab6",
+  "description": "thewlabs eslint config",
+  "author": "Wilfried AGO <me@wilfriedago.dev> (https://github.com/wilfriedago)",
   "license": "MIT",
-  "funding": "https://github.com/sponsors/antfu",
-  "homepage": "https://github.com/antfu/eslint-config",
+  "funding": "https://github.com/sponsors/wilfriedago",
+  "homepage": "https://github.com/thewlabs/eslint-config-thewlabs#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antfu/eslint-config.git"
+    "url": "git+https://github.com/thewlabs/eslint-config-thewlabs.git"
   },
   "bugs": {
-    "url": "https://github.com/antfu/eslint-config/issues"
+    "url": "https://github.com/thewlabs/eslint-config-thewlabs/issues"
   },
   "keywords": [
     "eslint-config"
@@ -142,7 +142,6 @@
     "yaml-eslint-parser": "catalog:prod"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "workspace:*",
     "@antfu/ni": "catalog:dev",
     "@eslint-react/eslint-plugin": "catalog:peer",
     "@eslint/config-inspector": "catalog:dev",
@@ -153,6 +152,7 @@
     "astro-eslint-parser": "catalog:peer",
     "bumpp": "catalog:dev",
     "eslint": "catalog:peer",
+    "eslint-config-thewlabs": "workspace:*",
     "eslint-plugin-astro": "catalog:peer",
     "eslint-plugin-format": "catalog:peer",
     "eslint-plugin-react-hooks": "catalog:peer",
