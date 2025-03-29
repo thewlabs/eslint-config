@@ -1,3 +1,5 @@
+export * from './angular'
+export * from './angular-template'
 export * from './astro'
 export * from './command'
 export * from './comments'
