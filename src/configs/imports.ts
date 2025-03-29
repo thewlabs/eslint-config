@@ -9,7 +9,7 @@ export async function imports(options: OptionsStylistic = {}): Promise<TypedFlat
 
   return [
     {
-      name: 'antfu/imports/rules',
+      name: 'thewlabs/imports/rules',
       plugins: {
         antfu: pluginAntfu,
         import: pluginImport,

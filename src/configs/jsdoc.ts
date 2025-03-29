@@ -12,7 +12,7 @@ export async function jsdoc(options: OptionsStylistic & OptionsFiles = {}): Prom
   return [
     {
       files,
-      name: 'antfu/jsdoc/rules',
+      name: 'thewlabs/jsdoc/rules',
       plugins: {
         jsdoc: await interopDefault(import('eslint-plugin-jsdoc')),
       },

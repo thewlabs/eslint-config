@@ -1,8 +1,8 @@
 import styleMigrate from '@stylistic/eslint-plugin-migrate'
 
-import { antfu } from './src'
+import { thewlabs } from './src'
 
-export default antfu(
+export default thewlabs(
   {
     vue: {
       a11y: true,
