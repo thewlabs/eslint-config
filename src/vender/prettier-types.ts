@@ -123,6 +123,47 @@ export interface VendoredPrettierOptionsRequired {
    * @defaultValue "ignore"
    */
   xmlWhitespaceSensitivity: 'ignore' | 'strict' | 'preserve'
+
+  /**
+   * Path to the Tailwind config file.
+   */
+  tailwindConfig?: string
+
+  /**
+   * Path to the CSS stylesheet used by Tailwind CSS (v4+)
+   */
+  tailwindStylesheet?: string
+
+  /**
+   * Path to the CSS stylesheet used by Tailwind CSS (v4+)
+   *
+   * @deprecated Use `tailwindStylesheet` instead
+   */
+  tailwindEntryPoint?: string
+
+  /**
+   * List of functions and tagged templates that contain sortable Tailwind classes.
+   * @default []
+   */
+  tailwindFunctions?: string[]
+
+  /**
+   * List of attributes/props that contain sortable Tailwind classes.
+   * @default []
+   */
+  tailwindAttributes?: string[]
+
+  /**
+   * Preserve whitespace around Tailwind classes when sorting.
+   * @default false
+   */
+  tailwindPreserveWhitespace?: boolean
+
+  /**
+   * Preserve duplicate classes inside a class list when sorting.
+   * @default false
+   */
+  tailwindPreserveDuplicates?: boolean
 }
 
 export type BuiltInParserName =

@@ -35,6 +35,7 @@ export async function formatters(
       markdown: true,
       slidev: isPackageExists('@slidev/cli'),
       svg: isPrettierPluginXmlInScope,
+      tailwindcss: isPackageInScope('prettier-plugin-tailwindcss'),
       xml: isPrettierPluginXmlInScope,
     }
   }
@@ -43,6 +44,7 @@ export async function formatters(
     'eslint-plugin-format',
     options.markdown && options.slidev ? 'prettier-plugin-slidev' : undefined,
     options.astro ? 'prettier-plugin-astro' : undefined,
+    options.tailwindcss ? 'prettier-plugin-tailwindcss' : undefined,
     (options.xml || options.svg) ? '@prettier/plugin-xml' : undefined,
   ])
 
@@ -76,6 +78,14 @@ export async function formatters(
     xmlSelfClosingSpace: true,
     xmlSortAttributesByKey: false,
     xmlWhitespaceSensitivity: 'ignore',
+  }
+
+  const prettierTailwindOptions: VendoredPrettierOptions = {
+    tailwindAttributes: ['class', 'className', 'tw'],
+    tailwindConfig: 'tailwind.config.js',
+    tailwindFunctions: ['tw', 'tv', 'cx', 'cva', 'clsx', 'classNames'],
+    tailwindPreserveDuplicates: false,
+    tailwindPreserveWhitespace: false,
   }
 
   const dprintOptions = Object.assign(
@@ -312,6 +322,26 @@ export async function formatters(
           'error',
           mergePrettierOptions(prettierOptions, {
             parser: 'graphql',
+          }),
+        ],
+      },
+    })
+  }
+
+  if (options.tailwindcss) {
+    configs.push({
+      files: [GLOB_HTML, GLOB_ASTRO, GLOB_ASTRO_TS, GLOB_CSS, GLOB_SCSS, GLOB_LESS],
+      languageOptions: {
+        parser: parserPlain,
+      },
+      name: 'thewlabs/formatter/tailwindcss',
+      rules: {
+        'format/prettier': [
+          'error',
+          mergePrettierOptions({ ...prettierTailwindOptions, ...prettierOptions }, {
+            plugins: [
+              'prettier-plugin-tailwindcss',
+            ],
           }),
         ],
       },

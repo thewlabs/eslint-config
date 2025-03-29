@@ -175,6 +175,7 @@
     "pnpm-workspace-yaml": "catalog:dev",
     "prettier-plugin-astro": "catalog:peer",
     "prettier-plugin-slidev": "catalog:peer",
+    "prettier-plugin-tailwindcss": "catalog:peer",
     "simple-git-hooks": "catalog:dev",
     "svelte": "catalog:peer",
     "svelte-eslint-parser": "catalog:peer",

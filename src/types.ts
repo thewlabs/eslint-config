@@ -67,6 +67,13 @@ export interface OptionsFormatters {
   css?: 'prettier' | boolean
 
   /**
+   * Enable formatting support for Tailwind CSS.
+   *
+   * Currently only support Prettier.
+   */
+  tailwindcss?: 'prettier' | boolean
+
+  /**
    * Enable formatting support for HTML.
    *
    * Currently only support Prettier.

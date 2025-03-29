@@ -106,6 +106,9 @@ catalogs:
     prettier-plugin-slidev:
       specifier: ^1.0.5
       version: 1.0.5
+    prettier-plugin-tailwindcss:
+      specifier: ^0.6.11
+      version: 0.6.11
     svelte:
       specifier: ^5.25.10
       version: 5.26.2
