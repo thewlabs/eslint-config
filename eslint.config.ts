@@ -7,6 +7,8 @@ export default thewlabs(
     vue: {
       a11y: true,
     },
+    angular: true,
+    angularTemplate: true,
     react: true,
     solid: true,
     svelte: true,

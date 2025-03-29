@@ -358,6 +358,26 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
   regexp?: boolean | (OptionsRegExp & OptionsOverrides)
 
   /**
+   * Enable angular rules.
+   *
+   * Requires installing:
+   * - `@angular-eslint/eslint-plugin`
+   *
+   * @default false
+   */
+  angular?: boolean | OptionsOverrides
+
+  /**
+   * Enable angular template rules.
+   *
+   * Requires installing:
+   * - `@angular-eslint/eslint-plugin-template`
+   *
+   * @default false
+   */
+  angularTemplate?: boolean | OptionsOverrides
+
+  /**
    * Enable react rules.
    *
    * Requires installing:
@@ -452,5 +472,7 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
     toml?: TypedFlatConfigItem['rules']
     react?: TypedFlatConfigItem['rules']
     svelte?: TypedFlatConfigItem['rules']
+    angular?: TypedFlatConfigItem['rules']
+    angularTemplate?: TypedFlatConfigItem['rules']
   }
 }

@@ -5,6 +5,8 @@ import type { Awaitable, ConfigNames, OptionsConfig, TypedFlatConfigItem } from 
 import { FlatConfigComposer } from 'eslint-flat-config-utils'
 import { isPackageExists } from 'local-pkg'
 import {
+  angular,
+  angularTemplate,
   astro,
   command,
   comments,
@@ -55,6 +57,9 @@ const VuePackages = [
 ]
 
 export const defaultPluginRenaming = {
+  '@angular-eslint/eslint-plugin': 'angular',
+  '@angular-eslint/eslint-plugin-template': 'angular/template',
+
   '@eslint-react': 'react',
   '@eslint-react/dom': 'react-dom',
   '@eslint-react/hooks-extra': 'react-hooks-extra',
@@ -83,6 +88,8 @@ export function thewlabs(
   ...userConfigs: Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[] | FlatConfigComposer<any, any> | Linter.Config[]>[]
 ): FlatConfigComposer<TypedFlatConfigItem, ConfigNames> {
   const {
+    angular: enableAngular = false,
+    angularTemplate: enableAngularTemplate = false,
     astro: enableAstro = false,
     autoRenamePlugins = true,
     componentExts = [],
@@ -203,6 +210,20 @@ export function thewlabs(
       overrides: getOverrides(options, 'vue'),
       stylistic: stylisticOptions,
       typescript: !!enableTypeScript,
+    }))
+  }
+
+  if (enableAngular) {
+    configs.push(angular({
+      ...typescriptOptions,
+      overrides: getOverrides(options, 'angular'),
+      tsconfigPath,
+    }))
+  }
+
+  if (enableAngularTemplate) {
+    configs.push(angularTemplate({
+      overrides: getOverrides(options, 'angularTemplate'),
     }))
   }
 
