@@ -148,7 +148,6 @@
     "@angular-eslint/eslint-plugin": "catalog:peer",
     "@angular-eslint/eslint-plugin-template": "catalog:peer",
     "@angular-eslint/template-parser": "catalog:peer",
-    "@antfu/eslint-config": "workspace:*",
     "@antfu/ni": "catalog:dev",
     "@eslint-react/eslint-plugin": "catalog:peer",
     "@eslint/config-inspector": "catalog:dev",
