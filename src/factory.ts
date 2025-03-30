@@ -29,6 +29,7 @@ import {
   svelte,
   test,
   toml,
+  tsdoc,
   typescript,
   unicorn,
   unocss,
@@ -76,12 +77,10 @@ export const defaultPluginRenaming = {
 /**
  * Construct an array of ESLint flat config items.
  *
- * @param {OptionsConfig & TypedFlatConfigItem} options
- *  The options for generating the ESLint configurations.
- * @param {Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[]>[]} userConfigs
- *  The user configurations to be merged with the generated configurations.
- * @returns {Promise<TypedFlatConfigItem[]>}
- *  The merged ESLint configurations.
+ * @param options - The options for generating the ESLint configurations.
+ * @param userConfigs - The user configurations to be merged with the generated configurations.
+ *
+ * @returns The merged ESLint configurations.
  */
 export function thewlabs(
   options: OptionsConfig & Omit<TypedFlatConfigItem, 'files'> = {},
@@ -155,6 +154,7 @@ export function thewlabs(
     jsdoc({
       stylistic: stylisticOptions,
     }),
+    tsdoc(),
     imports({
       stylistic: stylisticOptions,
     }),
