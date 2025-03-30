@@ -11,6 +11,7 @@ import {
   command,
   comments,
   disables,
+  formatters,
   ignores,
   imports,
   javascript,
@@ -22,6 +23,7 @@ import {
   perfectionist,
   pnpm,
   react,
+  regexp,
   solid,
   sortPackageJson,
   sortTsconfig,
@@ -36,8 +38,6 @@ import {
   vue,
   yaml,
 } from './configs'
-import { formatters } from './configs/formatters'
-import { regexp } from './configs/regexp'
 import { interopDefault, isInEditorEnv } from './utils'
 
 const flatConfigProps = [
