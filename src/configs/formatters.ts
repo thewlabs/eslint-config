@@ -48,8 +48,9 @@ export async function formatters(
     (options.xml || options.svg) ? '@prettier/plugin-xml' : undefined,
   ])
 
-  if (options.slidev && options.markdown !== true && options.markdown !== 'prettier')
+  if (options.slidev && options.markdown !== true && options.markdown !== 'prettier') {
     throw new Error('`slidev` option only works when `markdown` is enabled with `prettier`')
+  }
 
   const {
     indent,
@@ -80,7 +81,7 @@ export async function formatters(
     xmlWhitespaceSensitivity: 'ignore',
   }
 
-  const prettierTailwindOptions: VendoredPrettierOptions = {
+  const prettierTailwindCssOptions: VendoredPrettierOptions = {
     tailwindAttributes: ['class', 'className', 'tw'],
     tailwindConfig: 'tailwind.config.js',
     tailwindFunctions: ['tw', 'tv', 'cx', 'cva', 'clsx', 'classNames'],
@@ -338,7 +339,7 @@ export async function formatters(
       rules: {
         'format/prettier': [
           'error',
-          mergePrettierOptions({ ...prettierTailwindOptions, ...prettierOptions }, {
+          mergePrettierOptions({ ...prettierTailwindCssOptions, ...prettierOptions }, {
             plugins: [
               'prettier-plugin-tailwindcss',
             ],
