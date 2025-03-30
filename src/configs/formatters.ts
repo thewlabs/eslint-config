@@ -332,9 +332,6 @@ export async function formatters(
   if (options.tailwindcss) {
     configs.push({
       files: [GLOB_HTML, GLOB_ASTRO, GLOB_ASTRO_TS, GLOB_CSS, GLOB_SCSS, GLOB_LESS],
-      languageOptions: {
-        parser: parserPlain,
-      },
       name: 'thewlabs/formatter/tailwindcss',
       rules: {
         'format/prettier': [
