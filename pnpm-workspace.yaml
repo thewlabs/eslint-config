@@ -66,6 +66,7 @@ catalogs:
     eslint-plugin-pnpm: ^0.3.1
     eslint-plugin-regexp: ^2.9.0
     eslint-plugin-toml: ^0.12.0
+    eslint-plugin-tsdoc: ^0.4.0
     eslint-plugin-unicorn: ^59.0.1
     eslint-plugin-unused-imports: ^4.1.4
     eslint-plugin-vue: ^10.2.0
