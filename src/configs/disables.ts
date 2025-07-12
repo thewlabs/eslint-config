@@ -6,32 +6,32 @@ export async function disables(): Promise<TypedFlatConfigItem[]> {
   return [
     {
       files: [`**/scripts/${GLOB_SRC}`],
-      name: 'antfu/disables/scripts',
+      name: 'thewlabs/disables/scripts',
       rules: {
-        'antfu/no-top-level-await': 'off',
         'no-console': 'off',
+        'thewlabs/no-top-level-await': 'off',
         'ts/explicit-function-return-type': 'off',
       },
     },
     {
       files: [`**/cli/${GLOB_SRC}`, `**/cli.${GLOB_SRC_EXT}`],
-      name: 'antfu/disables/cli',
+      name: 'thewlabs/disables/cli',
       rules: {
-        'antfu/no-top-level-await': 'off',
         'no-console': 'off',
+        'thewlabs/no-top-level-await': 'off',
       },
     },
     {
       files: ['**/bin/**/*', `**/bin.${GLOB_SRC_EXT}`],
-      name: 'antfu/disables/bin',
+      name: 'thewlabs/disables/bin',
       rules: {
-        'antfu/no-import-dist': 'off',
-        'antfu/no-import-node-modules-by-path': 'off',
+        'thewlabs/no-import-dist': 'off',
+        'thewlabs/no-import-node-modules-by-path': 'off',
       },
     },
     {
       files: ['**/*.d.?([cm])ts'],
-      name: 'antfu/disables/dts',
+      name: 'thewlabs/disables/dts',
       rules: {
         'eslint-comments/no-unlimited-disable': 'off',
         'no-restricted-syntax': 'off',
@@ -40,17 +40,17 @@ export async function disables(): Promise<TypedFlatConfigItem[]> {
     },
     {
       files: ['**/*.js', '**/*.cjs'],
-      name: 'antfu/disables/cjs',
+      name: 'thewlabs/disables/cjs',
       rules: {
         'ts/no-require-imports': 'off',
       },
     },
     {
       files: [`**/*.config.${GLOB_SRC_EXT}`, `**/*.config.*.${GLOB_SRC_EXT}`],
-      name: 'antfu/disables/config-files',
+      name: 'thewlabs/disables/config-files',
       rules: {
-        'antfu/no-top-level-await': 'off',
         'no-console': 'off',
+        'thewlabs/no-top-level-await': 'off',
         'ts/explicit-function-return-type': 'off',
       },
     },

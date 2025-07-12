@@ -31,7 +31,7 @@ export async function svelte(
 
   return [
     {
-      name: 'antfu/svelte/setup',
+      name: 'thewlabs/svelte/setup',
       plugins: {
         svelte: pluginSvelte,
       },
@@ -47,7 +47,7 @@ export async function svelte(
             : null,
         },
       },
-      name: 'antfu/svelte/rules',
+      name: 'thewlabs/svelte/rules',
       processor: pluginSvelte.processors['.svelte'],
       rules: {
         'no-undef': 'off', // incompatible with most recent (attribute-form) generic types RFC
@@ -65,7 +65,6 @@ export async function svelte(
         'svelte/no-dupe-else-if-blocks': 'error',
         'svelte/no-dupe-style-properties': 'error',
         'svelte/no-dupe-use-directives': 'error',
-        'svelte/no-dynamic-slot-name': 'error',
         'svelte/no-export-load-in-svelte-module-in-kit-pages': 'error',
         'svelte/no-inner-declarations': 'error',
         'svelte/no-not-function-handler': 'error',

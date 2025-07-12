@@ -24,7 +24,7 @@ export async function astro(
 
   return [
     {
-      name: 'antfu/astro/setup',
+      name: 'thewlabs/astro/setup',
       plugins: {
         astro: pluginAstro,
       },
@@ -40,13 +40,9 @@ export async function astro(
         },
         sourceType: 'module',
       },
-      name: 'antfu/astro/rules',
+      name: 'thewlabs/astro/rules',
       processor: 'astro/client-side-ts',
       rules: {
-        // Astro uses top level await for e.g. data fetching
-        // https://docs.astro.build/en/guides/data-fetching/#fetch-in-astro
-        'antfu/no-top-level-await': 'off',
-
         // use recommended rules
         'astro/missing-client-only-directive-value': 'error',
         'astro/no-conflict-set-directives': 'error',
@@ -58,6 +54,10 @@ export async function astro(
         'astro/no-unused-define-vars-in-style': 'error',
         'astro/semi': 'off',
         'astro/valid-compile': 'error',
+
+        // Astro uses top level await for e.g. data fetching
+        // https://docs.astro.build/en/guides/data-fetching/#fetch-in-astro
+        'thewlabs/no-top-level-await': 'off',
 
         ...stylistic
           ? {
