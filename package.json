@@ -1,19 +1,19 @@
 {
-  "name": "@antfu/eslint-config",
+  "name": "@thewlabs/eslint-config",
   "type": "module",
-  "version": "4.16.2",
+  "version": "4.16.3",
   "packageManager": "pnpm@10.12.4",
-  "description": "Anthony's ESLint config",
-  "author": "Anthony Fu <anthonyfu117@hotmail.com> (https://github.com/antfu/)",
+  "description": "thewlabs ESLint config",
+  "author": "Wilfried AGO <wilfried.ago@thewlabs.tech> (https://github.com/wilfriedago)",
   "license": "MIT",
-  "funding": "https://github.com/sponsors/antfu",
-  "homepage": "https://github.com/antfu/eslint-config",
+  "funding": "https://github.com/sponsors/thewlabs",
+  "homepage": "https://github.com/thewlabs/eslint-config",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/antfu/eslint-config.git"
+    "url": "git+https://github.com/thewlabs/eslint-config.git"
   },
   "bugs": {
-    "url": "https://github.com/antfu/eslint-config/issues"
+    "url": "https://github.com/thewlabs/eslint-config/issues"
   },
   "keywords": [
     "eslint-config"
@@ -37,7 +37,7 @@
     "lint": "eslint",
     "gen": "tsx scripts/typegen.ts && tsx scripts/versiongen.ts",
     "prepack": "nr build",
-    "release": "bumpp && pnpm publish",
+    "release": "bumpp && pnpm publish --access public",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks"
@@ -128,6 +128,7 @@
     "eslint-plugin-pnpm": "catalog:prod",
     "eslint-plugin-regexp": "catalog:prod",
     "eslint-plugin-toml": "catalog:prod",
+    "eslint-plugin-tsdoc": "catalog:prod",
     "eslint-plugin-unicorn": "catalog:prod",
     "eslint-plugin-unused-imports": "catalog:prod",
     "eslint-plugin-vue": "catalog:prod",
@@ -142,11 +143,11 @@
     "yaml-eslint-parser": "catalog:prod"
   },
   "devDependencies": {
-    "@antfu/eslint-config": "workspace:*",
     "@antfu/ni": "catalog:dev",
     "@eslint-react/eslint-plugin": "catalog:peer",
     "@eslint/config-inspector": "catalog:dev",
     "@prettier/plugin-xml": "catalog:peer",
+    "@thewlabs/eslint-config": "workspace:*",
     "@types/node": "catalog:dev",
     "@unocss/eslint-plugin": "catalog:peer",
     "astro-eslint-parser": "catalog:peer",

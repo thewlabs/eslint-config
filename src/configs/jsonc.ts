@@ -26,7 +26,7 @@ export async function jsonc(
 
   return [
     {
-      name: 'antfu/jsonc/setup',
+      name: 'thewlabs/jsonc/setup',
       plugins: {
         jsonc: pluginJsonc as any,
       },
@@ -36,7 +36,7 @@ export async function jsonc(
       languageOptions: {
         parser: parserJsonc,
       },
-      name: 'antfu/jsonc/rules',
+      name: 'thewlabs/jsonc/rules',
       rules: {
         'jsonc/no-bigint-literals': 'error',
         'jsonc/no-binary-expression': 'error',
