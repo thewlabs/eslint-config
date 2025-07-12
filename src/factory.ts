@@ -9,6 +9,7 @@ import {
   command,
   comments,
   disables,
+  formatters,
   ignores,
   imports,
   javascript,
@@ -21,6 +22,7 @@ import {
   perfectionist,
   pnpm,
   react,
+  regexp,
   solid,
   sortPackageJson,
   sortTsconfig,
@@ -28,14 +30,13 @@ import {
   svelte,
   test,
   toml,
+  tsdoc,
   typescript,
   unicorn,
   unocss,
   vue,
   yaml,
 } from './configs'
-import { formatters } from './configs/formatters'
-import { regexp } from './configs/regexp'
 import { interopDefault, isInEditorEnv } from './utils'
 
 const flatConfigProps = [
@@ -74,14 +75,11 @@ export const defaultPluginRenaming = {
 /**
  * Construct an array of ESLint flat config items.
  *
- * @param {OptionsConfig & TypedFlatConfigItem} options
- *  The options for generating the ESLint configurations.
- * @param {Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[]>[]} userConfigs
- *  The user configurations to be merged with the generated configurations.
- * @returns {Promise<TypedFlatConfigItem[]>}
- *  The merged ESLint configurations.
+ * @param options - The options for generating the ESLint configurations.
+ * @param userConfigs - The user configurations to be merged with the generated configurations.
+ * @returns The merged ESLint configurations.
  */
-export function antfu(
+export function defineConfig(
   options: OptionsConfig & Omit<TypedFlatConfigItem, 'files'> = {},
   ...userConfigs: Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[] | FlatConfigComposer<any, any> | Linter.Config[]>[]
 ): FlatConfigComposer<TypedFlatConfigItem, ConfigNames> {
@@ -109,7 +107,7 @@ export function antfu(
     isInEditor = isInEditorEnv()
     if (isInEditor)
       // eslint-disable-next-line no-console
-      console.log('[@antfu/eslint-config] Detected running in editor, some rules are disabled.')
+      console.log('[@thewlabs/eslint-config] Detected running in editor, some rules are disabled.')
   }
 
   const stylisticOptions = options.stylistic === false
@@ -126,13 +124,13 @@ export function antfu(
   if (enableGitignore) {
     if (typeof enableGitignore !== 'boolean') {
       configs.push(interopDefault(import('eslint-config-flat-gitignore')).then(r => [r({
-        name: 'antfu/gitignore',
+        name: 'thewlabs/gitignore',
         ...enableGitignore,
       })]))
     }
     else {
       configs.push(interopDefault(import('eslint-config-flat-gitignore')).then(r => [r({
-        name: 'antfu/gitignore',
+        name: 'thewlabs/gitignore',
         strict: false,
       })]))
     }
@@ -152,6 +150,10 @@ export function antfu(
     node(),
     jsdoc({
       stylistic: stylisticOptions,
+    }),
+    tsdoc({
+      tsconfigPath,
+      typescript: !!enableTypeScript,
     }),
     imports({
       stylistic: stylisticOptions,
@@ -322,7 +324,7 @@ export function antfu(
   )
 
   if ('files' in options) {
-    throw new Error('[@antfu/eslint-config] The first argument should not contain the "files" property as the options are supposed to be global. Place it in the second or later config instead.')
+    throw new Error('[@thewlabs/eslint-config] The first argument should not contain the "files" property as the options are supposed to be global. Place it in the second or later config instead.')
   }
 
   // User can optionally pass a flat config item to the first argument
