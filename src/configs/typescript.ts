@@ -93,14 +93,14 @@ export async function typescript(
           ...parserOptions as any,
         },
       },
-      name: `antfu/typescript/${typeAware ? 'type-aware-parser' : 'parser'}`,
+      name: `thewlabs/typescript/${typeAware ? 'type-aware-parser' : 'parser'}`,
     }
   }
 
   return [
     {
       // Install the plugins without globs, so they can be configured separately.
-      name: 'antfu/typescript/setup',
+      name: 'thewlabs/typescript/setup',
       plugins: {
         antfu: pluginAntfu,
         ts: pluginTs as any,
@@ -117,7 +117,7 @@ export async function typescript(
         ],
     {
       files,
-      name: 'antfu/typescript/rules',
+      name: 'thewlabs/typescript/rules',
       rules: {
         ...renameRules(
           pluginTs.configs['eslint-recommended'].overrides![0].rules!,
@@ -179,7 +179,7 @@ export async function typescript(
       ? [{
           files: filesTypeAware,
           ignores: ignoresTypeAware,
-          name: 'antfu/typescript/rules-type-aware',
+          name: 'thewlabs/typescript/rules-type-aware',
           rules: {
             ...typeAwareRules,
             ...overridesTypeAware,

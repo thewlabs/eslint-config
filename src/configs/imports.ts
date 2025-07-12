@@ -9,7 +9,7 @@ export async function imports(options: OptionsOverrides & OptionsStylistic = {})
 
   return [
     {
-      name: 'antfu/imports/rules',
+      name: 'thewlabs/imports/rules',
       plugins: {
         antfu: pluginAntfu,
         import: pluginImportLite,

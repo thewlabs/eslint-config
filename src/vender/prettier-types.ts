@@ -12,7 +12,7 @@ export type VendoredPrettierRuleOptions = VendoredPrettierOptions & {
 export interface VendoredPrettierOptionsRequired {
   /**
    * Specify the line length that the printer will wrap on.
-   * @default 120
+   * @defaultValue 120
    */
   printWidth: number
   /**
@@ -59,18 +59,18 @@ export interface VendoredPrettierOptionsRequired {
   rangeStart: number
   /**
    * Format only a segment of a file.
-   * @default Number.POSITIVE_INFINITY
+   * @defaultValue Number.POSITIVE_INFINITY
    */
   rangeEnd: number
   /**
    * By default, Prettier will wrap markdown text as-is since some services use a linebreak-sensitive renderer.
    * In some cases you may want to rely on editor/viewer soft wrapping instead, so this option allows you to opt out.
-   * @default "preserve"
+   * @defaultValue "preserve"
    */
   proseWrap: 'always' | 'never' | 'preserve'
   /**
    * Include parentheses around a sole arrow function parameter.
-   * @default "always"
+   * @defaultValue "always"
    */
   arrowParens: 'avoid' | 'always'
   /**
@@ -79,48 +79,48 @@ export interface VendoredPrettierOptionsRequired {
   plugins: Array<string | any>
   /**
    * How to handle whitespaces in HTML.
-   * @default "css"
+   * @defaultValue "css"
    */
   htmlWhitespaceSensitivity: 'css' | 'strict' | 'ignore'
   /**
    * Which end of line characters to apply.
-   * @default "lf"
+   * @defaultValue "lf"
    */
   endOfLine: 'auto' | 'lf' | 'crlf' | 'cr'
   /**
    * Change when properties in objects are quoted.
-   * @default "as-needed"
+   * @defaultValue "as-needed"
    */
   quoteProps: 'as-needed' | 'consistent' | 'preserve'
   /**
    * Whether or not to indent the code inside <script> and <style> tags in Vue files.
-   * @default false
+   * @defaultValue false
    */
   vueIndentScriptAndStyle: boolean
   /**
    * Enforce single attribute per line in HTML, XML, Vue and JSX.
-   * @default false
+   * @defaultValue false
    */
   singleAttributePerLine: boolean
 
   /**
    * How to handle whitespaces in XML.
-   * @default "preserve"
+   * @defaultValue "preserve"
    */
   xmlQuoteAttributes: 'single' | 'double' | 'preserve'
   /**
    * Whether to put a space inside the brackets of self-closing XML elements.
-   * @default true
+   * @defaultValue true
    */
   xmlSelfClosingSpace: boolean
   /**
    * Whether to sort attributes by key in XML elements.
-   * @default false
+   * @defaultValue false
    */
   xmlSortAttributesByKey: boolean
   /**
    * How to handle whitespaces in XML.
-   * @default "ignore"
+   * @defaultValue "ignore"
    */
   xmlWhitespaceSensitivity: 'ignore' | 'strict' | 'preserve'
 }
