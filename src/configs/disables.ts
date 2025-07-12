@@ -8,8 +8,8 @@ export async function disables(): Promise<TypedFlatConfigItem[]> {
       files: [`**/scripts/${GLOB_SRC}`],
       name: 'thewlabs/disables/scripts',
       rules: {
+        'antfu/no-top-level-await': 'off',
         'no-console': 'off',
-        'thewlabs/no-top-level-await': 'off',
         'ts/explicit-function-return-type': 'off',
       },
     },
@@ -17,16 +17,16 @@ export async function disables(): Promise<TypedFlatConfigItem[]> {
       files: [`**/cli/${GLOB_SRC}`, `**/cli.${GLOB_SRC_EXT}`],
       name: 'thewlabs/disables/cli',
       rules: {
+        'antfu/no-top-level-await': 'off',
         'no-console': 'off',
-        'thewlabs/no-top-level-await': 'off',
       },
     },
     {
       files: ['**/bin/**/*', `**/bin.${GLOB_SRC_EXT}`],
       name: 'thewlabs/disables/bin',
       rules: {
-        'thewlabs/no-import-dist': 'off',
-        'thewlabs/no-import-node-modules-by-path': 'off',
+        'antfu/no-import-dist': 'off',
+        'antfu/no-import-node-modules-by-path': 'off',
       },
     },
     {
@@ -49,8 +49,8 @@ export async function disables(): Promise<TypedFlatConfigItem[]> {
       files: [`**/*.config.${GLOB_SRC_EXT}`, `**/*.config.*.${GLOB_SRC_EXT}`],
       name: 'thewlabs/disables/config-files',
       rules: {
+        'antfu/no-top-level-await': 'off',
         'no-console': 'off',
-        'thewlabs/no-top-level-await': 'off',
         'ts/explicit-function-return-type': 'off',
       },
     },
