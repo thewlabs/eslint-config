@@ -1,9 +1,9 @@
 {
   "name": "@thewlabs/eslint-config",
   "type": "module",
-  "version": "4.16.2",
+  "version": "4.16.3",
   "packageManager": "pnpm@10.12.4",
-  "description": "thewlabs eslint config",
+  "description": "thewlabs ESLint config",
   "author": "Wilfried AGO <wilfried.ago@thewlabs.tech> (https://github.com/wilfriedago)",
   "license": "MIT",
   "funding": "https://github.com/sponsors/thewlabs",
@@ -37,7 +37,7 @@
     "lint": "eslint",
     "gen": "tsx scripts/typegen.ts && tsx scripts/versiongen.ts",
     "prepack": "nr build",
-    "release": "bumpp && pnpm publish",
+    "release": "bumpp && pnpm publish --access public",
     "test": "vitest",
     "typecheck": "tsc --noEmit",
     "prepare": "simple-git-hooks"
