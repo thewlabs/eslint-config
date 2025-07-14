@@ -128,7 +128,6 @@
     "eslint-plugin-pnpm": "catalog:prod",
     "eslint-plugin-regexp": "catalog:prod",
     "eslint-plugin-toml": "catalog:prod",
-    "eslint-plugin-tsdoc": "catalog:prod",
     "eslint-plugin-unicorn": "catalog:prod",
     "eslint-plugin-unused-imports": "catalog:prod",
     "eslint-plugin-vue": "catalog:prod",
