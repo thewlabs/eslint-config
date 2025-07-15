@@ -1,8 +1,8 @@
 {
   "name": "@thewlabs/eslint-config",
   "type": "module",
-  "version": "4.16.3",
-  "packageManager": "pnpm@10.12.4",
+  "version": "4.17.0",
+  "packageManager": "pnpm@10.13.1",
   "description": "thewlabs ESLint config",
   "author": "Wilfried AGO <wilfried.ago@thewlabs.tech> (https://github.com/wilfriedago)",
   "license": "MIT",
