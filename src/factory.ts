@@ -29,7 +29,6 @@ import {
   svelte,
   test,
   toml,
-  tsdoc,
   typescript,
   unicorn,
   unocss,
@@ -72,9 +71,12 @@ export const defaultPluginRenaming = {
 /**
  * Construct an array of ESLint flat config items.
  *
- * @param options - The options for generating the ESLint configurations.
- * @param userConfigs - The user configurations to be merged with the generated configurations.
- * @returns The merged ESLint configurations.
+ * @param {OptionsConfig & TypedFlatConfigItem} options
+ *  The options for generating the ESLint configurations.
+ * @param {Awaitable<TypedFlatConfigItem | TypedFlatConfigItem[]>[]} userConfigs
+ *  The user configurations to be merged with the generated configurations.
+ * @returns {Promise<TypedFlatConfigItem[]>}
+ *  The merged ESLint configurations.
  */
 export function defineConfig(
   options: OptionsConfig & Omit<TypedFlatConfigItem, 'files'> = {},
@@ -146,10 +148,6 @@ export function defineConfig(
     node(),
     jsdoc({
       stylistic: stylisticOptions,
-    }),
-    tsdoc({
-      tsconfigPath,
-      typescript: !!enableTypeScript,
     }),
     imports({
       stylistic: stylisticOptions,

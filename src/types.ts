@@ -34,14 +34,14 @@ export interface OptionsVue extends OptionsOverrides {
    * Create virtual files for Vue SFC blocks to enable linting.
    *
    * @see https://github.com/antfu/eslint-processor-vue-blocks
-   * @defaultValue true
+   * @default true
    */
   sfcBlocks?: boolean | VueBlocksOptions
 
   /**
    * Vue version. Apply different rules set from `eslint-plugin-vue`.
    *
-   * @defaultValue 3
+   * @default 3
    */
   vueVersion?: 2 | 3
 
@@ -49,7 +49,7 @@ export interface OptionsVue extends OptionsOverrides {
    * Vue accessibility plugin. Help check a11y issue in `.vue` files upon enabled
    *
    * @see https://vue-a11y.github.io/eslint-plugin-vuejs-accessibility/
-   * @defaultValue false
+   * @default false
    */
   a11y?: boolean
 }
@@ -137,7 +137,7 @@ export interface OptionsComponentExts {
    * Additional extensions for components.
    *
    * @example ['vue']
-   * @defaultValue []
+   * @default []
    */
   componentExts?: string[]
 }
@@ -146,7 +146,7 @@ export interface OptionsUnicorn extends OptionsOverrides {
   /**
    * Include all rules recommended by `eslint-plugin-unicorn`, instead of only ones picked by Anthony.
    *
-   * @defaultValue false
+   * @default false
    */
   allRecommended?: boolean
 }
@@ -159,13 +159,13 @@ export interface OptionsTypeScriptParserOptions {
 
   /**
    * Glob patterns for files that should be type aware.
-   * @defaultValue ['**\/*.\{ts,tsx\}']
+   * @default ['**\/*.{ts,tsx}']
    */
   filesTypeAware?: string[]
 
   /**
    * Glob patterns for files that should not be type aware.
-   * @defaultValue ['**\/*.md\/**', '**\/*.astro/*.ts']
+   * @default ['**\/*.md\/**', '**\/*.astro/*.ts']
    */
   ignoresTypeAware?: string[]
 }
@@ -203,7 +203,7 @@ export interface OptionsProjectType {
   /**
    * Type of the project. `lib` will enable more strict rules for libraries.
    *
-   * @defaultValue 'app'
+   * @default 'app'
    */
   type?: 'app' | 'lib'
 }
@@ -222,12 +222,12 @@ export interface OptionsIsInEditor {
 export interface OptionsUnoCSS extends OptionsOverrides {
   /**
    * Enable attributify support.
-   * @defaultValue true
+   * @default true
    */
   attributify?: boolean
   /**
    * Enable strict mode by throwing errors about blocklisted classes.
-   * @defaultValue false
+   * @default false
    */
   strict?: boolean
 }
@@ -238,8 +238,8 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    *
    * Passing an object to configure the options.
    *
-   * @see https://github.com/thewlabs/eslint-config-flat-gitignore
-   * @defaultValue true
+   * @see https://github.com/antfu/eslint-config-flat-gitignore
+   * @default true
    */
   gitignore?: boolean | FlatGitignoreOptions
 
@@ -247,10 +247,10 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    * Disable some opinionated rules to Anthony's preference.
    *
    * Including:
-   * - `thewlabs/top-level-function`
-   * - `thewlabs/if-newline`
+   * - `antfu/top-level-function`
+   * - `antfu/if-newline`
    *
-   * @defaultValue false
+   * @default false
    */
   lessOpinionated?: boolean
 
@@ -264,7 +264,7 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    *
    * Passing an object to enable TypeScript Language Server support.
    *
-   * @defaultValue auto-detect based on the dependencies
+   * @default auto-detect based on the dependencies
    */
   typescript?: boolean | OptionsTypescript
 
@@ -273,56 +273,56 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    *
    * Currently only stylistic rules are included.
    *
-   * @defaultValue true
+   * @default true
    */
   jsx?: boolean
 
   /**
    * Options for eslint-plugin-unicorn.
    *
-   * @defaultValue true
+   * @default true
    */
   unicorn?: boolean | OptionsUnicorn
 
   /**
    * Options for eslint-plugin-import-lite.
    *
-   * @defaultValue true
+   * @default true
    */
   imports?: boolean | OptionsOverrides
 
   /**
    * Enable test support.
    *
-   * @defaultValue true
+   * @default true
    */
   test?: boolean | OptionsOverrides
 
   /**
    * Enable Vue support.
    *
-   * @defaultValue auto-detect based on the dependencies
+   * @default auto-detect based on the dependencies
    */
   vue?: boolean | OptionsVue
 
   /**
    * Enable JSONC support.
    *
-   * @defaultValue true
+   * @default true
    */
   jsonc?: boolean | OptionsOverrides
 
   /**
    * Enable YAML support.
    *
-   * @defaultValue true
+   * @default true
    */
   yaml?: boolean | OptionsOverrides
 
   /**
    * Enable TOML support.
    *
-   * @defaultValue true
+   * @default true
    */
   toml?: boolean | OptionsOverrides
 
@@ -335,7 +335,7 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    * Requires installing for formatting .astro:
    * - `prettier-plugin-astro`
    *
-   * @defaultValue false
+   * @default false
    */
   astro?: boolean | OptionsOverrides
 
@@ -344,7 +344,7 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    *
    * For formatting Markdown content, enable also `formatters.markdown`.
    *
-   * @defaultValue true
+   * @default true
    */
   markdown?: boolean | OptionsOverrides
 
@@ -352,7 +352,7 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    * Enable stylistic rules.
    *
    * @see https://eslint.style/
-   * @defaultValue true
+   * @default true
    */
   stylistic?: boolean | (StylisticConfig & OptionsOverrides)
 
@@ -360,7 +360,7 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    * Enable regexp rules.
    *
    * @see https://ota-meshi.github.io/eslint-plugin-regexp/
-   * @defaultValue true
+   * @default true
    */
   regexp?: boolean | (OptionsRegExp & OptionsOverrides)
 
@@ -372,7 +372,7 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    * - `eslint-plugin-react-hooks`
    * - `eslint-plugin-react-refresh`
    *
-   * @defaultValue false
+   * @default false
    */
   react?: boolean | OptionsOverrides
   /**
@@ -381,7 +381,7 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    * Requires installing:
    * - `eslint-plugin-solid`
    *
-   * @defaultValue false
+   * @default false
    */
   solid?: boolean | OptionsOverrides
 
@@ -391,7 +391,7 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    * Requires installing:
    * - `eslint-plugin-svelte`
    *
-   * @defaultValue false
+   * @default false
    */
   svelte?: boolean | OptionsOverrides
 
@@ -401,7 +401,7 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    * Requires installing:
    * - `@unocss/eslint-plugin`
    *
-   * @defaultValue false
+   * @default false
    */
   unocss?: boolean | OptionsUnoCSS
 
@@ -411,9 +411,9 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    * Currently it's disabled by default, as it's still experimental.
    * In the future it will be smartly enabled based on the project usage.
    *
-   * @see https://github.com/thewlabs/pnpm-workspace-utils
+   * @see https://github.com/antfu/pnpm-workspace-utils
    * @experimental
-   * @defaultValue false
+   * @default false
    */
   pnpm?: boolean
 
@@ -425,20 +425,20 @@ export interface OptionsConfig extends OptionsComponentExts, OptionsProjectType 
    *
    * When set to `true`, it will enable all formatters.
    *
-   * @defaultValue false
+   * @default false
    */
   formatters?: boolean | OptionsFormatters
 
   /**
    * Control to disable some rules in editors.
-   * @defaultValue auto-detect based on the process.env
+   * @default auto-detect based on the process.env
    */
   isInEditor?: boolean
 
   /**
    * Automatically rename plugins in the config.
    *
-   * @defaultValue true
+   * @default true
    */
   autoRenamePlugins?: boolean
 
