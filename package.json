@@ -4,7 +4,11 @@
   "version": "5.2.1",
   "packageManager": "pnpm@10.14.0",
   "description": "thewlabs ESLint config",
-  "author": "Wilfried AGO <wilfried.ago@thewlabs.tech> (https://github.com/wilfriedago)",
+  "author": {
+    "name": "Wilfried K. AGO",
+    "email": "hi@wilfriedago.me",
+    "url": "https://github.com/wilfriedago"
+  },
   "license": "MIT",
   "funding": "https://github.com/sponsors/thewlabs",
   "homepage": "https://github.com/thewlabs/eslint-config",
