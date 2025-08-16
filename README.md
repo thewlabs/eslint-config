@@ -627,9 +627,9 @@ To enable Next.js support, you need to explicitly turn it on:
 
 ```js
 // eslint.config.js
-import antfu from '@antfu/eslint-config'
+import { defineConfig } from '@thewlabs/eslint-config'
 
-export default antfu({
+export default defineConfig({
   nextjs: true,
 })
 ```
